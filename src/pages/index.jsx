@@ -1,6 +1,6 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import {
-  ChakraProvider,
+  Fade,
   Box,
   Flex,
   Button,
@@ -12,7 +12,10 @@ import {
   ListItem,
   ListIcon,
   HStack,
+  useMediaQuery,
+  useTimeout,
 } from "@chakra-ui/react";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 import Emoji from "a11y-react-emoji";
 import { ProjectCard } from "../components/project-card";
 import { projectDataList } from "../assets/project-data";
@@ -32,104 +35,160 @@ const ReactEmoji = () => {
 
 // markup
 const IndexPage = () => {
+  const [isMobileScreen] = useMediaQuery("(max-width: 30em)");
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [showScrollHint, setScrollHint] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setTimeout(() => {
+        setScrollPosition(window.scrollY);
+      }, [500]);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isMobileScreen]);
+
+  useEffect(() => {
+    if (isMobileScreen && scrollPosition <= 20) {
+      setTimeout(() => {
+        setScrollHint(true);
+      }, [2000]);
+    } else {
+      setScrollHint(false);
+    }
+  }, [isMobileScreen, scrollPosition]);
+
   return (
     <Flex
-      flexDirection={["column", "row"]}
+      flexDirection={["column", "column", "row"]}
       wrap="true"
-      w="100%"
+      w="100vw"
       h="100%"
-      gap={["32px", "0px"]}
+      gap={["24px", "32px", "0px"]}
     >
       <Flex
         flexDirection="column"
         items="center"
         justify="center"
-        w={["100vw", "50vw"]}
-        h="100%"
-        pl="5vw"
-        pr={["5vw", "0vw"]}
+        w={["100%", "100%", "64%"]}
+        h={["100vh", "100vh", "100%"]}
+        position={["relative", "relative", "fixed"]}
+        top="0"
+        left="0"
+        pl={["5%", "5%", "10%"]}
+        pr={["5%", "5%", "10%"]}
       >
-        <VStack spacing={["10px", "20px"]} w="100%" ml="5vw">
-          <Heading w="100%" textAlign="left" fontSize={["44px", "96px"]}>
+        <VStack spacing={["10px", "20px"]} w="100%">
+          <Heading w="100%" textAlign="left" fontSize={["60px", "72px"]}>
             Alex Melvin
           </Heading>
-          <Heading
+          <Text
             w="100%"
             textAlign="left"
-            fontSize={["28px", "40px"]}
+            fontSize={["24px", "30px"]}
             variant="italic"
           >
             is a
-          </Heading>
-          <Heading
+          </Text>
+          <Text
             w="100%"
             textAlign="left"
-            fontSize={["32px", "52px"]}
+            fontSize={["20px", "36px"]}
             color="red.600"
           >
             software developer
-          </Heading>
-          <Heading
+          </Text>
+          <Text
             w="100%"
             textAlign="left"
-            fontSize={["28px", "40px"]}
+            fontSize={["24px", "30px"]}
             variant="italic"
           >
             based in
-          </Heading>
-          <Heading w="100%" textAlign="left" fontSize={["32px", "52px"]}>
+          </Text>
+          <Heading w="100%" textAlign="left" fontSize={["20px", "40px"]}>
             Providence, RI
           </Heading>
           <Divider orientation="horizontal" color="blackAlpha" />
           <List spacing={3}>
-            <ListItem fontSize={["18px", "30px"]}>
+            <ListItem fontSize={["16px", "20px"]}>
               <ListIcon as={CoderEmoji} />
               {"  "} Software Developer at Amica Mutual Insurance.
             </ListItem>
-            <ListItem fontSize={["18px", "30px"]}>
+            <ListItem fontSize={["16px", "20px"]}>
               <ListIcon as={GradCapEmoji} />
               {"  "}Computer Science and Philosophy graduate from the University
               of Maryland, College Park
             </ListItem>
-            <ListItem fontSize={["18px", "30px"]}>
+            <ListItem fontSize={["16px", "20px"]}>
               <ListIcon as={ReactEmoji} />
               {"  "}Skilled in front-end development with React, Redux,
               Typescript, HTML, and CSS.
             </ListItem>
           </List>
           <HStack w="100%" h="60px" spacing="20px">
-            <SocialIcon
-              style={{ height: "60px", width: "60px" }}
-              url="https://www.linkedin.com/in/alex-melvin-075496204/"
-            />
-            <SocialIcon
-              style={{ height: "60px", width: "60px" }}
-              url="https://github.com/amelv"
-            />
-            <SocialIcon
-              style={{ height: "60px", width: "60px" }}
-              url="mailto:amelv@protonmail.com"
-            />
+            <Box
+              height={["44px", "52px", "60px"]}
+              width={["44px", "52px", "60px"]}
+            >
+              <SocialIcon
+                style={{ height: "100%", width: "100%" }}
+                url="https://www.linkedin.com/in/alex-melvin-075496204/"
+              />
+            </Box>
+            <Box
+              height={["44px", "52px", "60px"]}
+              width={["44px", "52px", "60px"]}
+            >
+              <SocialIcon
+                style={{ height: "100%", width: "100%" }}
+                url="https://github.com/amelv"
+              />
+            </Box>
+            <Box
+              height={["44px", "52px", "60px"]}
+              width={["44px", "52px", "60px"]}
+            >
+              <SocialIcon
+                style={{ height: "100%", width: "100%" }}
+                url="mailto:amelv@protonmail.com"
+              />
+            </Box>
           </HStack>
         </VStack>
+
+        <Fade in={showScrollHint} transition="all 2s ease">
+          <VStack
+            w="90%"
+            position="absolute"
+            alignItems="center"
+            justifyContent="center"
+            bottom="20px"
+          >
+            <Text>Projects Below</Text>
+            <ArrowDownIcon />
+          </VStack>
+        </Fade>
       </Flex>
-      <Flex
-        flexDirection="column"
-        w={["100vw", "50vw"]}
+      <VStack
+        spacing={["20px", "40px"]}
+        position={["relative", "relative", "absolute"]}
+        top="0"
+        left={["0%", "0%", "64%"]}
+        w={["100%", "100%", "36%"]}
         h="100p"
-        pl="5vw"
-        pr="5vw"
+        pl={["10%", "5%", "0%"]}
+        pr="10%"
       >
-        <VStack spacing={["20px", "40px"]} w="100%">
-          <Heading w="100%" textAlign="center" fontSize={["32px", "52px"]}>
-            Projects
-          </Heading>
-          <Divider orientation="horizontal" color="blackAlpha" />
-          {projectDataList.map((project) => (
-            <ProjectCard {...project} />
-          ))}
-        </VStack>
-      </Flex>
+        <Heading w="100%" textAlign="center" fontSize={["32px", "52px"]}>
+          Projects
+        </Heading>
+        <Divider orientation="horizontal" color="blackAlpha" />
+        {projectDataList.map((project) => (
+          <ProjectCard {...project} />
+        ))}
+      </VStack>
     </Flex>
   );
 };

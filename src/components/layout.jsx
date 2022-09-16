@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 const Layout = ({ children }) => {
   return (
     <main>
-      <Box w="100%" m="30px 0">
+      <Box w="100%" mt={["0px", "0px", "36px"]} mb={["12px", "12px", "36px"]}>
         {children}
       </Box>
     </main>
