@@ -94,7 +94,7 @@ const IndexPage = () => {
           <Text
             w="100%"
             textAlign="left"
-            fontSize={["20px", "36px"]}
+            fontSize={["32px", "40px"]}
             color="red.600"
           >
             software developer
