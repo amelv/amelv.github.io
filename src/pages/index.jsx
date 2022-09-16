@@ -53,33 +53,25 @@ const IndexPage = () => {
       }, [500]);
     };
     window.addEventListener("scroll", onScroll);
-    let resizeTimeout;
-    const onResize = () => {
-      if (resizeTimeout) {
-        window.cancelAnimationFrame(resizeTimeout);
-      }
-      resizeTimeout = window.requestAnimationFrame(() => {
-        let vh = window.innerHeight;
-        setMainHeight(`${vh}px`);
-      });
-    };
+
     if (isMobileScreen) {
-      window.addEventListener("resize", onResize);
+      setMainHeight(`${window.innerHeight}px`);
     }
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
     };
   }, [isMobileScreen]);
 
   useEffect(() => {
+    const onTimeout = () => {
+      setScrollHint(true);
+    };
     if (isMobileScreen && scrollPosition <= 20) {
-      setTimeout(() => {
-        setScrollHint(true);
-      }, [2000]);
+      setTimeout(onTimeout, [2000]);
     } else {
       setScrollHint(false);
     }
+    return () => clearTimeout(onTimeout);
   }, [isMobileScreen, scrollPosition]);
 
   return (
