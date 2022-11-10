@@ -1,4 +1,4 @@
-import albumSongSyncPreview from "./images/album-song-sync.png";
+import albumSongSyncPreview from "./images/albums-to-songs-sync.gif";
 import quantumAtlasPreview from "./images/quantum-atlas.png";
 
 export const projectDataList = [
