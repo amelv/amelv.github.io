@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
+import { ArrowDownIcon, AttachmentIcon } from "@chakra-ui/icons";
 import {
-  Fade,
   Box,
-  Flex,
-  Button,
   Divider,
-  VStack,
-  Text,
+  Fade,
+  Flex,
   Heading,
-  List,
-  ListItem,
-  ListIcon,
   HStack,
+  Link,
+  List,
+  ListIcon,
+  ListItem,
+  Text,
   useMediaQuery,
-  useTimeout,
+  VStack,
 } from "@chakra-ui/react";
-import { ArrowDownIcon } from "@chakra-ui/icons";
 import Emoji from "a11y-react-emoji";
-import { ProjectCard } from "../components/project-card";
-import { projectDataList } from "../assets/project-data";
+import React, { useEffect, useState } from "react";
 import { SocialIcon } from "react-social-icons";
+import { projectDataList } from "../assets/project-data";
+import Resume from "../assets/resume.pdf";
+import { ProjectCard } from "../components/project-card";
 
 const GradCapEmoji = () => {
   return <Emoji symbol="🎓" label="graduation cap" />;
@@ -169,6 +169,24 @@ const IndexPage = () => {
                 style={{ height: "100%", width: "100%" }}
                 url="mailto:amelv@protonmail.com"
               />
+            </Box>
+            <Box
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              height={["44px", "52px", "60px"]}
+            >
+              <Link
+                isExternal
+                fontSize={["18px", "24px"]}
+                href={Resume}
+                download="Alex Melvin Software Developer Resume"
+              >
+                Resume
+                <AttachmentIcon mx="5px" />
+              </Link>
             </Box>
           </HStack>
         </VStack>
