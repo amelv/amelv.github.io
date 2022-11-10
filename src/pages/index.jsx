@@ -41,25 +41,26 @@ const IndexPage = () => {
   const [mainHeight, setMainHeight] = useState("100vh");
 
   useEffect(() => {
-    let scrollTimeout;
-    const onScroll = () => {
-      setTimeout(() => {
-        if (scrollTimeout) {
-          window.cancelAnimationFrame(scrollTimeout);
-        }
-        scrollTimeout = window.requestAnimationFrame(() =>
-          setScrollPosition(window.scrollY)
-        );
-      }, [500]);
-    };
-    window.addEventListener("scroll", onScroll);
-
     if (isMobileScreen) {
+      let scrollTimeout;
+      const onScroll = () => {
+        setTimeout(() => {
+          if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+          }
+          scrollTimeout = window.requestAnimationFrame(() =>
+            setScrollPosition(window.scrollY)
+          );
+        }, [500]);
+      };
+      window.addEventListener("scroll", onScroll);
       setMainHeight(`${window.innerHeight}px`);
+
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+      };
     }
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => {};
   }, [isMobileScreen]);
 
   useEffect(() => {
@@ -179,6 +180,7 @@ const IndexPage = () => {
               height={["44px", "52px", "60px"]}
             >
               <Link
+                color="cyan.500"
                 isExternal
                 fontSize={["18px", "24px"]}
                 href={Resume}
@@ -191,7 +193,11 @@ const IndexPage = () => {
           </HStack>
         </VStack>
 
-        <Fade in={showScrollHint} transition="all 2s ease">
+        <Fade
+          in={showScrollHint}
+          style={{ zIndex: -1 }}
+          transition="all 2s ease"
+        >
           <VStack
             w="90%"
             position="absolute"
