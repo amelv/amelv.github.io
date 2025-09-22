@@ -149,3 +149,21 @@ h1, h2, h3 {
     max-width: 100%;
   }
 }
+
+.upwork-badges {
+  margin-top: 1rem;
+}
+
+.upwork-badges img {
+  max-width: 250px;  /* scale down if screenshot is large */
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.upwork-badges .badge-caption {
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  color: #e4e4e4;
+  font-style: italic;
+}
