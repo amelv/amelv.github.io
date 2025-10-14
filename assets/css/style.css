@@ -11,6 +11,11 @@ body {
   color: #eae6f2; /* light lavender-ish */
   line-height: 1.6;
   padding: 20px;
+  background-image: url('../../images/mountains.jpeg'); 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -200px;
 }
 
 /* Accent lavender color */
@@ -136,12 +141,16 @@ h1, h2, h3 {
 .footer {
   text-align: center;
   margin: 4rem 0 2rem 0;
-  color: var(--gray-medium);
+  color: var(--white);
   font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  body {
+    background-position-x: -200px;
+    background-position-y: 0px;
+  }
   .hero-content, .project-content {
     flex-direction: column;
   }

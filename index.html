@@ -53,7 +53,6 @@
       </div>
     </div>
   </header>
-
   <section class="services section fade-in" id="services">
     <h2>What I Do</h2>
     <ul>
@@ -157,12 +156,26 @@
     </article>
   </section>
 
-  <section class="photo-break section fade-in">
-    <img src="images/mountains.jpeg" alt="Some pretty mountains with fog and clouds" />
-  </section>
-
   <section class="contact section fade-in" id="contact">
     <h2>Contact</h2>
+    <!-- Google Calendar Appointment Scheduling begin -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+      (function () {
+        var target = document.currentScript;
+        window.addEventListener('load', function () {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1o4Z2KLNn1vNtH9jeDzbB-nl_RNc-d-sc6JFqOaK2wF9qO9pVShZSxQSkKczYsyJQU9aQj2LWE?gv=true',
+            color: '#ecff42',
+            label: 'Book a free 1-hour consultation with Alexa!',
+            target,
+          });
+        });
+      })();
+    </script>
+    <!-- end Google Calendar Appointment Scheduling -->
+    <br />
     <p><a href="mailto:amelv@protonmail.com">Email</a></p>
     <p><a href="https://www.linkedin.com/in/amelv">LinkedIn</a></p>
     <p><a href="https://github.com/amelv">Github</a></p>
