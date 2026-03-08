@@ -1,0 +1,9 @@
+/*!
+ * hoverIntent v1.10.2 // 2020.04.28 // jQuery v1.7.0+
+ * http://briancherne.github.io/jquery-hoverIntent/
+ *
+ * You may use hoverIntent under the terms of the MIT license. Basically that
+ * means you are free to use hoverIntent as long as this header is left intact.
+ * Copyright 2007-2019 Brian Cherne
+ */
+!function(e){"use strict";"function"==typeof define&&define.amd?define(["jquery"],e):"object"==typeof module&&module.exports?module.exports=e(require("jquery")):jQuery&&!jQuery.fn.hoverIntent&&e(jQuery)}(function(e){"use strict";var t,n,o={interval:100,sensitivity:6,timeout:0},i=0,u=function(e){t=e.pageX,n=e.pageY},r=function(e,o,i,f){if(Math.sqrt((i.pX-t)*(i.pX-t)+(i.pY-n)*(i.pY-n))<f.sensitivity)return o.off(i.event,u),delete i.timeoutId,i.isActive=!0,e.pageX=t,e.pageY=n,delete i.pX,delete i.pY,f.over.apply(o[0],[e]);i.pX=t,i.pY=n,i.timeoutId=setTimeout(function(){r(e,o,i,f)},f.interval)},f=function(e){return"function"==typeof e};e.fn.hoverIntent=function(t,n,v){var d,s=i++,a=e.extend({},o);return e.isPlainObject(t)?(a=e.extend(a,t),f(a.out)||(a.out=a.over)):a=f(n)?e.extend(a,{over:t,out:n,selector:v}):e.extend(a,{over:t,out:t,selector:n}),d=function(t){var n,o,i=e.extend({},t),f=e(this),v=f.data("hoverIntent");if(v||f.data("hoverIntent",v={}),(n=v[s])||(v[s]=n={id:s}),n.timeoutId&&(n.timeoutId=clearTimeout(n.timeoutId)),o=n.event="mousemove.hoverIntent.hoverIntent"+s,"mouseenter"===t.type){if(n.isActive)return;n.pX=i.pageX,n.pY=i.pageY,f.off(o,u).on(o,u),n.timeoutId=setTimeout(function(){r(i,f,n,a)},a.interval)}else{if(!n.isActive)return;f.off(o,u),n.timeoutId=setTimeout(function(){!function(e,t,n,o){var i=t.data("hoverIntent");i&&delete i[n.id],o.apply(t[0],[e])}(i,f,n,a.out)},a.timeout)}},this.on({"mouseenter.hoverIntent":d,"mouseleave.hoverIntent":d},a.selector)}});
