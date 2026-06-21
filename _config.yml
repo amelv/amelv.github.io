@@ -1,0 +1,43 @@
+title: Alexa Melvin
+tagline: Website Designer & Developer
+email: alexa@alexamelvin.com
+description: Portfolio of Alexa Melvin — website designer and developer specializing in WordPress, custom development, and clean, usable design.
+url: "https://alexamelvin.com"
+baseurl: ""
+
+permalink: pretty
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: portfolio
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+formspree_id: "xeebjnbe"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - LICENSE

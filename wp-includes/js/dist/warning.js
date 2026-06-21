@@ -1,1 +1,0 @@
-(()=>{"use strict";var e,r={d:(e,t)=>{for(var o in t)r.o(t,o)&&!r.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},o:(e,r)=>Object.prototype.hasOwnProperty.call(e,r)};e={},r.d(e,{default:()=>o});const t=new Set;function o(e){if(!t.has(e)){console.warn(e);try{throw Error(e)}catch{}t.add(e)}}(window.wp=window.wp||{}).warning=e.default})();

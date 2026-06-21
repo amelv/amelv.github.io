@@ -1,1 +1,0 @@
-(window.wp=window.wp||{}).baseStyles={};
