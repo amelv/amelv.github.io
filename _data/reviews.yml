@@ -1,0 +1,20 @@
+- client: "Robert Stanley"
+  text: "Hiring a developer or programmer can be filled with all kinds of landmines, with people who say they know the technology or how to build what you want on the web, and then it turns out you hired a shady contractor. Forget the angst, and doubt. I recommend Alexa 100%."
+  project: "the-testing-pane"
+  featured: true
+  source: "Upwork"
+  source_url: "https://www.upwork.com"
+
+- client: "Jimmy Butler"
+  text: "Alexa can handle whatever she says she can do, and does it well. I will be recommending her to others."
+  featured: true
+  source: "Upwork"
+  source_url: "https://www.upwork.com"
+
+- client: "Ursa Scherer"
+  role: "Founder, Ursa Major Advisory Services"
+  text: "A huge thank you to Alexa Melvin for her exceptional work on the site — truly everything her website promises. You were a great partner for this project and I'm so glad to have found you."
+  project: "ursa-major-advisory-services"
+  featured: true
+  source: "LinkedIn"
+  source_url: "https://www.linkedin.com/posts/ursascherer_ursa-major-advisory-services-empower-your-share-7431839766049951745-hEDG/"

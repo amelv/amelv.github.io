@@ -89,8 +89,9 @@
   --color-light: #DBDBDB;
   --color-card-bg: #fafafa;
 
-  --font-body: Literata, Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: Platypi, Georgia, 'Times New Roman', serif;
+  --font-nav: Literata, Georgia, serif;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -120,9 +121,10 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.55;
+  letter-spacing: -0.02em;
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -276,13 +278,14 @@ p {
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0;
 }
 
 .sidebar-nav a {
   color: var(--color-text);
   text-decoration: none;
   font-size: 1.05rem;
+  font-weight: 500;
   padding: 8px 12px;
   margin-left: -12px;
   border-radius: 4px;
@@ -305,9 +308,9 @@ p {
   color: var(--color-text);
   text-decoration: none;
   font-size: 1.05rem;
+  font-weight: 500;
   padding: 8px 12px;
   margin-left: -12px;
-  margin-top: 6px;
   border-radius: 4px;
   transition: background 0.15s, color 0.15s;
 }
@@ -325,6 +328,33 @@ p {
   display: none;
 }
 
+/* LinkedIn link */
+
+.sidebar-li {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  margin-left: -12px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-li:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--color-heading);
+}
+
+.li-text {
+  display: inline;
+}
+
+.li-icon {
+  display: none;
+}
+
 .sidebar-footer {
   margin-top: auto;
   padding-top: var(--space-lg);
@@ -334,6 +364,12 @@ p {
   font-size: 0.75rem;
   color: var(--color-accent);
   margin-bottom: 4px;
+}
+
+.sidebar-rating {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-bottom: 2px;
 }
 
 .status-dot {
@@ -369,7 +405,8 @@ p {
   display: flex;
   gap: var(--space-xl);
   align-items: flex-start;
-  padding-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -385,17 +422,68 @@ p {
 .hero .tagline {
   font-size: 1rem;
   color: var(--color-muted);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
   font-family: var(--font-body);
   font-weight: 500;
 }
 
 .hero p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-text);
   margin-bottom: 6px;
   line-height: 1.45;
   max-width: 100%;
+}
+
+/* Stats section */
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin: 1.5rem 0 var(--space-md);
+  width: fit-content;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.stat-stars {
+  font-size: 1rem;
+  color: #f0b429;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--color-heading);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-border);
+  flex-shrink: 0;
 }
 
 .hero-profile {
@@ -461,14 +549,12 @@ p {
 .services-intro {
   margin-bottom: var(--space-md);
   color: var(--color-text);
-  font-size: 1rem;
   line-height: 1.6;
 }
 
 .services > p {
   margin-bottom: var(--space-sm);
   color: var(--color-text);
-  font-size: 0.9rem;
 }
 
 .services-list {
@@ -481,7 +567,6 @@ p {
   border-bottom: 1px solid var(--color-border);
   padding-left: 18px;
   position: relative;
-  font-size: 0.95rem;
 }
 
 .services-list li:first-child {
@@ -547,6 +632,77 @@ p {
 
 .content-page li {
   margin-bottom: var(--space-xs);
+}
+
+/* =========================================================================
+   Reviews
+   ========================================================================= */
+
+.reviews-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.reviews-section h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.reviews-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.review-card {
+  margin: 0;
+  padding: var(--space-md);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.review-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+}
+
+.review-author strong {
+  color: var(--color-heading);
+}
+
+.review-role {
+  color: var(--color-muted);
+}
+
+.review-source {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.project-reviews {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.project-reviews h2 {
+  margin-bottom: var(--space-md);
+  font-size: 1.1rem;
+}
+
+@media (min-width: 640px) {
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* =========================================================================
@@ -937,10 +1093,8 @@ p {
   }
 
   .sidebar-gh {
-    margin-bottom: 0;
-    margin-left: 8px;
-    margin-top: 0;
-    padding: 0;
+    margin: 0;
+    padding: 14px 6px;
     color: var(--color-muted);
   }
 
@@ -949,13 +1103,26 @@ p {
     color: var(--color-heading);
   }
 
-  .gh-text {
+  .gh-text,
+  .li-text {
     display: none;
   }
 
-  .gh-icon {
+  .gh-icon,
+  .li-icon {
     display: block;
     line-height: 0;
+  }
+
+  .sidebar-li {
+    margin: 0;
+    padding: 14px 6px;
+    color: var(--color-muted);
+  }
+
+  .sidebar-li:hover {
+    background: none;
+    color: var(--color-heading);
   }
 
   .sidebar-footer {
@@ -973,7 +1140,7 @@ p {
     align-items: flex-start;
     gap: var(--space-lg);
     text-align: left;
-    padding-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
   }
 
   .hero-profile {
@@ -987,6 +1154,15 @@ p {
 
   .hero-buttons {
     justify-content: flex-start;
+  }
+
+  .stats-row {
+    gap: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .stat-divider {
+    height: 24px;
   }
 
   .cta-section {

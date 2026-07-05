@@ -34,6 +34,25 @@ layout: default
     </div>
   {% endif %}
 
+  {% assign project_reviews = site.data.reviews | where: 'project', page.slug %}
+  {% if project_reviews.size > 0 %}
+    <div class="project-reviews">
+      <h2>What the client said</h2>
+      {% for review in project_reviews %}
+        <blockquote class="review-card">
+          <p class="review-text">{{ review.text }}</p>
+          <footer class="review-author">
+            <strong>{{ review.client }}</strong>
+            {% if review.role %}<span class="review-role">{{ review.role }}</span>{% endif %}
+            {% if review.source_url %}
+              <a href="{{ review.source_url }}" target="_blank" rel="noopener" class="review-source">Read on {{ review.source }}</a>
+            {% endif %}
+          </footer>
+        </blockquote>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <nav class="project-nav">
     {% if page.previous.url and page.previous.collection == 'portfolio' %}
       <a href="{{ page.previous.url }}" class="project-nav-prev">&larr; {{ page.previous.title }}</a>

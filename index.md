@@ -9,6 +9,19 @@ title: Home
     <div class="hero-content">
       <h1>Alexa Melvin</h1>
       <p class="tagline">Website Designer & Developer</p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="stat-label">5-star rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">7+</span>
+          <span class="stat-label">years experience</span>
+        </div>
+      </div>
+
       <p>Specializing in WordPress, custom development, and clean, usable design. Small businesses and nonprofits trust me with everything from redesigns to tricky custom features.</p>
       <p><strong>I'd love to build your website!</strong></p>
       <div class="hero-buttons">
@@ -34,6 +47,27 @@ title: Home
       <li>Ongoing site support and "webmaster" help</li>
     </ul>
   </section>
+
+  {% assign featured_reviews = site.data.reviews | where: 'featured', true %}
+  {% if featured_reviews.size > 0 %}
+    <section class="reviews-section">
+      <h2>What Clients Say</h2>
+      <div class="reviews-grid">
+        {% for review in featured_reviews %}
+          <blockquote class="review-card">
+            <p class="review-text">{{ review.text }}</p>
+            <footer class="review-author">
+              <strong>{{ review.client }}</strong>
+              {% if review.role %}<span class="review-role">{{ review.role }}</span>{% endif %}
+              {% if review.source_url %}
+                <a href="{{ review.source_url }}" target="_blank" rel="noopener" class="review-source">Read on {{ review.source }}</a>
+              {% endif %}
+            </footer>
+          </blockquote>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
 
   <section class="cta-section">
     <h2>Have a project in mind?</h2>
