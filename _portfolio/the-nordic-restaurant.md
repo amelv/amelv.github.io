@@ -1,5 +1,6 @@
 ---
 title: Powering a High-Volume Tourist Restaurant
+featured: true
 date: 2024-06-01
 images:
   - /assets/images/nordic-restaurant.png

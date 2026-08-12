@@ -1,5 +1,6 @@
 ---
 title: Telling 80 Years of Community Care
+featured: true
 date: 2025-05-01
 images: []
 tags:

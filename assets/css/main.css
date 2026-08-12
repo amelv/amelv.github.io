@@ -563,20 +563,19 @@ p {
 .services-list li {
   padding: 10px 0;
   border-bottom: 1px solid var(--color-border);
-  padding-left: 18px;
-  position: relative;
 }
 
 .services-list li:first-child {
   border-top: 1px solid var(--color-border);
 }
 
-.services-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
+.services-list li i {
   color: var(--color-accent);
-  font-weight: 700;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
 }
 
 /* CTA section */
