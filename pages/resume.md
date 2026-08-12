@@ -15,7 +15,7 @@ permalink: /resume/
     <p>Design and development for small businesses, nonprofits, and agencies. WordPress, Laravel, React, static sites. Ongoing maintenance, hosting, and support.</p>
   </li>
   <li>
-    <div class="experience-title">Web Developer &mdash; Amica Insurance</div>
+    <div class="experience-title">Web Developer at Amica Insurance</div>
     <div class="experience-meta">Contract &middot; 2022 &ndash; 2023</div>
     <p>Developed new features and enhancements for the online customer portal. Lead development of a document uploader that drove a 150% increase in successful uploads. Built multi-factor authentication UI and collaborated on a component design system.</p>
   </li>

@@ -8,7 +8,7 @@ permalink: /about/
 
 <p class="bio">I'm Alexa! I build websites that are ethical, secure, and easy to use. I want your site to make you happy, not stressed.</p>
 
-<p>I'm a queer trans woman, a musician, and a total nerd for making things work well. I live in Brazil and work with wonderful small businesses and nonprofits across the US. Woman-owned, LGBTQ-owned.</p>
+<p>I'm a queer trans woman and a musician who loves making things work well. I work with small businesses and nonprofits across the US. Woman-owned, LGBTQ-owned.</p>
 
 <p>You'll always work directly with me. The same person who builds your site sticks around to keep it running. I'll help you figure out what you actually need, set everything up clearly, and be there when you have questions. No mysteries, no headaches.</p>
 
