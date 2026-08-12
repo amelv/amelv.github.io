@@ -11,4 +11,9 @@ tags:
   - WordPress
 ---
 
-Building a new reservation and admin management system in Laravel, integrated to a WordPress site, aiming to make the customer and staff experience easier and smooth. Ongoing maintenance of all their web services and websites, including mobile design improvements, uptime fixes, and AWS hosting management.
+Built a custom reservation and payment system for The Nordic, a destination restaurant in Rhode Island.
+
+- Integrated MerchantOne payment processing with Gravity Forms — tokenized card handling, server-side validation, and dynamic pricing for Sunday reservations, special events, and large group bookings
+- Built a new Laravel admin dashboard for managing reservations, time slots, and customer data, replacing a legacy system
+- Connected booking data to MailWizz email marketing and Google Sheets for operational reporting
+- I continue to maintain and improve all their web systems as an ongoing technical partner

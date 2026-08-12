@@ -6,9 +6,9 @@ images:
   - /assets/images/local-goodness-2.png
   - /assets/images/local-goodness-3.png
 tags:
-  - Recipe Blog
-  - Web Design
   - WordPress
+  - Content Migration
+  - Web Design
 ---
 
-A revamped website developed in WordPress to support editor-friendly, SEO-ready recipe content alongside connected travel and story-driven posts. Built with a fresh, engaging design and a flexible foundation that makes publishing, maintaining, and growing the site simple and sustainable.
+Rebuilt the Local Goodness website in WordPress, migrating content from a legacy platform while preserving years of recipes, travel stories, and field trip guides. Designed an editor-friendly publishing workflow that lets the site grow without needing a developer for every update.

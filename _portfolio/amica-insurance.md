@@ -1,6 +1,5 @@
 ---
 title: Making Online Portals Work for Millions
-featured: true
 date: 2023-01-01
 images:
   - /assets/images/amica-logo.png
