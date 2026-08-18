@@ -1,7 +1,6 @@
 title: Alexa Melvin
-tagline: Your website, built to work
-email: alexa@alexamelvin.com
-description: Alexa Melvin builds payment systems, custom admin tools, and WordPress sites for small businesses and nonprofits. Web developer with 7+ years experience.
+tagline: Websites and systems that make your work easier
+description: Alexa Melvin builds payment systems, custom admin tools, and WordPress sites for small businesses and nonprofits. Web developer with 7+ years of experience.
 url: "https://alexamelvin.com"
 baseurl: ""
 
@@ -18,11 +17,6 @@ defaults:
       type: portfolio
     values:
       layout: portfolio
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
   - scope:
       path: ""
     values:
