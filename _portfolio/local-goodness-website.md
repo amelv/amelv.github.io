@@ -11,4 +11,4 @@ tags:
   - Web Design
 ---
 
-Rebuilt the Local Goodness website in WordPress, migrating content from a legacy platform while preserving years of recipes, travel stories, and field trip guides. Designed an editor-friendly publishing workflow that lets the site grow without needing a developer for every update.
+Rebuilt the Local Goodness website in WordPress, migrating content from the previous publishing platform while preserving years of recipes, travel stories, and field trip guides. Designed an editor-friendly publishing workflow so editors can make routine updates independently.

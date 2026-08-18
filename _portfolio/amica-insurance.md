@@ -10,8 +10,8 @@ tags:
   - React
 ---
 
-Developed new features and enhancements for the online customer portal of Amica Insurance, a major insurance company.
+Developed new features and enhancements for Amica Insurance's online customer portal.
 
-- Lead development of document uploader, generating a 150% increase in successful uploads over 3 months.
+- Led development of a document uploader, increasing successful uploads by 150% over three months.
 - Built a multi-factor authentication login user interface and enrollment page.
-- Collaborated on a new component design system to prepare for rebrand.
+- Collaborated on a component-based design system to support the upcoming rebrand.

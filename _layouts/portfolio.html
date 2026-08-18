@@ -17,9 +17,18 @@ layout: default
   {% if page.images %}
     <div class="project-gallery">
       {% for img in page.images %}
-        <figure class="gallery-image">
-          <img src="{{ img | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
-        </figure>
+        {% if forloop.first and page.links.size > 0 %}
+          <figure class="gallery-image gallery-hero">
+            <img src="{{ img | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
+            {% if page.links.size > 0 %}
+              <a href="{{ page.links[0].url }}" class="gallery-hero-badge" target="_blank" rel="noopener">{{ page.links[0].title }} <span aria-hidden="true">&rarr;</span></a>
+            {% endif %}
+          </figure>
+        {% else %}
+          <figure class="gallery-image">
+            <img src="{{ img | relative_url }}" alt="{{ page.title }} screenshot {{ forloop.index }}" loading="lazy">
+          </figure>
+        {% endif %}
       {% endfor %}
     </div>
   {% endif %}
@@ -28,16 +37,25 @@ layout: default
     {{ content }}
   </div>
 
-  {% if page.link %}
-    <div class="project-links">
-      <a href="{{ page.link }}" class="btn" target="_blank" rel="noopener">View Site</a>
-    </div>
+  {% if page.links.size > 0 %}
+    <section class="visit-card" aria-label="Visit the project">
+      {% if page.links.size > 0 %}
+        <a href="{{ page.links[0].url }}" class="btn visit-card-primary" target="_blank" rel="noopener">{{ page.links[0].title }} <span aria-hidden="true">&rarr;</span></a>
+        {% if page.links.size > 1 %}
+          <div class="visit-card-secondary">
+            {% for link in page.links offset:1 %}
+              <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </section>
   {% endif %}
 
   {% assign project_reviews = site.data.reviews | where: 'project', page.slug %}
   {% if project_reviews.size > 0 %}
     <div class="project-reviews">
-      <h2>What the client said</h2>
+        <h2>Client Perspective</h2>
       {% for review in project_reviews %}
         <blockquote class="review-card">
           <p class="review-text">{{ review.text }}</p>
@@ -57,7 +75,7 @@ layout: default
     {% if page.previous.url and page.previous.collection == 'portfolio' %}
       <a href="{{ page.previous.url }}" class="project-nav-prev">&larr; {{ page.previous.title }}</a>
     {% endif %}
-    <a href="{{ '/portfolio/' | relative_url }}" class="project-nav-all">All Projects</a>
+    <a href="{{ '/portfolio/' | relative_url }}" class="project-nav-all">Back to My Work</a>
     {% if page.next.url and page.next.collection == 'portfolio' %}
       <a href="{{ page.next.url }}" class="project-nav-next">{{ page.next.title }} &rarr;</a>
     {% endif %}

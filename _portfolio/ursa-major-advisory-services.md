@@ -7,9 +7,11 @@ images:
   - /assets/images/ursa-major-3.png
 tags:
   - Business Advertising
-  - SquareSpace
+   - Squarespace
   - Web Design
-link: https://ursamajoradvisory.com
+links:
+  - title: Visit the website
+    url: https://www.ursamajoradvisoryservices.com/
 ---
 
-Designed website for the new consulting business of Ursa Major Advisory Services.
+Designed a website for Ursa Major Advisory Services as it launched its consulting practice.

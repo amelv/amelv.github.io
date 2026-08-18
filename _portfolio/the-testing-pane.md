@@ -9,7 +9,9 @@ tags:
   - Newsletter
   - Substack
   - Web Design
-link: https://thetestingpane.substack.com
+links:
+  - title: Visit the publication
+    url: https://thetestingpane.substack.com
 ---
 
-Brand identity and visual design for The Testing Pane, a Substack publication exploring software QA through a humanistic lens. I created the logo, banner graphics, color palette, and typography system to establish a cohesive visual identity.
+Brand identity and visual design for The Testing Pane, a Substack publication exploring the human side of software quality assurance. I created the logo, banner graphics, color palette, and typography system to create a consistent visual system across the publication.

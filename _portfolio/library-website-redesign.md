@@ -11,4 +11,4 @@ tags:
   - WordPress
 ---
 
-Led the redesign of a WordPress college library website, coordinating with multiple stakeholders to deliver a clearer, more user-friendly site with fewer patron issues.
+Led the redesign of a WordPress college library website, coordinating with multiple stakeholders to deliver clearer navigation and a smoother experience for library patrons.
